@@ -1,0 +1,43 @@
+---
+export interface Work {
+  name: string;
+  src: string;
+  link?: string;
+  sourceCode?: string;
+}
+
+const { name, src, link, sourceCode } = Astro.props;
+---
+
+<div
+  class="flex max-w-sm flex-col rounded-lg border border-gray-700 bg-gray-800 p-5 shadow"
+>
+  <h5 class="mb-5 text-lg tracking-tight">{name}</h5>
+  <img src={src} alt="" class="rounded-sm duration-200 hover:scale-110" />
+  <div class="mt-5 flex h-full items-end justify-center gap-3">
+    {
+      link && (
+        <a
+          class="rounded-sm border-slate-600 bg-slate-700 px-5 py-2.5 text-sm font-medium text-zinc-200 hover:bg-slate-600 focus:outline-none focus:ring-4 focus:ring-slate-600"
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Demo
+        </a>
+      )
+    }
+    {
+      sourceCode && (
+        <a
+          class="rounded-sm border-slate-600 bg-slate-700 px-5 py-2.5 text-sm font-medium text-zinc-200 hover:bg-slate-600 focus:outline-none focus:ring-4 focus:ring-slate-600"
+          href={sourceCode}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </a>
+      )
+    }
+  </div>
+</div>

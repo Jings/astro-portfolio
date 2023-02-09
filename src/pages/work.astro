@@ -1,0 +1,22 @@
+---
+import ContentPageTitle from "../components/ContentPageTitle.astro";
+import WorkCard from "../components/WorkCard.astro";
+import ContentPage from "../layouts/ContentPage.astro";
+import { works } from "../util/constants";
+---
+
+<ContentPage title="Ingo Krumbein | Work">
+  <ContentPageTitle title="Work examples">
+    <p class="py-6">Some work examples to checkout</p>
+  </ContentPageTitle>
+
+  <div
+    class="grid gap-8 px-0 pb-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+  >
+    {
+      works.map(({ src, sourceCode, link, name }) => (
+        <WorkCard name={name} link={link} src={src} sourceCode={sourceCode} />
+      ))
+    }
+  </div>
+</ContentPage>

@@ -1,6 +1,6 @@
 ---
 import Navigation from "./Navigation.astro";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <header
@@ -12,13 +12,13 @@ import { Icon } from "astro-icon";
       <Navigation />
     </div>
     <Icon
-      name="fa-solid:bars"
+      name="mdi:menu"
       class="block sm:hidden cursor-pointer"
       id="mobileNavButtonOpen"
       size={28}
     />
     <Icon
-      name="fa-solid:times"
+      name="mdi:close"
       class="hidden cursor-pointer"
       id="mobileNavButtonClose"
       size={28}

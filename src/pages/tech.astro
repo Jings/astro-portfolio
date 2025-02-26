@@ -1,7 +1,7 @@
 ---
 import ContentPageTitle from "../components/ContentPageTitle.astro";
 import ContentPage from "../layouts/ContentPage.astro";
-import { frameworks, technologies } from "../util/constants";
+import { frameworks, technologies, languages, tools } from "../util/constants";
 ---
 
 <ContentPage title="Ingo Krumbein | Experience">
@@ -9,10 +9,20 @@ import { frameworks, technologies } from "../util/constants";
     <p class="py-6">Technologies and Frameworks of my choice</p>
   </ContentPageTitle>
 
-  <h2>Technologies</h2>
+  <h2>Languages & Technologies</h2>
   <div
     class="grid w-full grid-cols-2 gap-8 py-8 px-0 text-center md:grid-cols-3 xl:grid-cols-4"
   >
+    {
+      languages.map(({ src, title, style }) => (
+        <div
+          class={`rounded-lg py-2 shadow-md duration-500 hover:scale-105 ${style}`}
+        >
+          <img src={src} alt="" class="mx-auto w-20" />
+          <p class="mt-4">{title}</p>
+        </div>
+      ))
+    }
     {
       technologies.map(({ src, title, style }) => (
         <div
@@ -24,13 +34,29 @@ import { frameworks, technologies } from "../util/constants";
       ))
     }
   </div>
-  <h2>Frameworks</h2>
 
+  <h2>Frameworks</h2>
   <div
     class="grid w-full grid-cols-2 gap-8 py-8 px-0 text-center md:grid-cols-3 xl:grid-cols-4"
   >
     {
       frameworks.map(({ src, title, style }) => (
+        <div
+          class={`rounded-lg py-2 shadow-md duration-500 hover:scale-105 ${style}`}
+        >
+          <img src={src} alt="" class="mx-auto w-20" />
+          <p class="mt-4">{title}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <h2>Tools</h2>
+  <div
+    class="grid w-full grid-cols-2 gap-8 py-8 px-0 text-center md:grid-cols-3 xl:grid-cols-4"
+  >
+    {
+      tools.map(({ src, title, style }) => (
         <div
           class={`rounded-lg py-2 shadow-md duration-500 hover:scale-105 ${style}`}
         >
